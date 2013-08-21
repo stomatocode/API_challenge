@@ -1,0 +1,16 @@
+  <h1>Git Profile Viewer</h1>
+
+  <% if @client %>
+    <h2>Profile for <%= @client.login %></h2>
+
+    <h3>Gists:</h3>
+    <% @gists.each do |gist| %>
+      <%= gist %>
+    <% end %>
+
+
+  <% else %>
+    <p><a href='/github'> Log Into Github <\a></p>
+  <% end %>
+</div>
+    
