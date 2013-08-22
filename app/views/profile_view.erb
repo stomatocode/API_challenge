@@ -4,13 +4,22 @@
     <h2>Profile for <%= @client.login %></h2>
 
     <h3>Gists:</h3>
-    <% @gists.each do |gist| %>
-      <%= gist %>
-    <% end %>
+      <% @gists.each do |gist| %>
+        <p><%= gist.description %></p>
+      <% end %>
 
+    <h3>Followers</h3>
+      <% @followers.each do |follower| %>
+        <p><%= follower.login %></p>
+      <% end %>
+
+    <h3>Repos</h3>
+      <% @repos.each do |repo| %>
+        <p><%= repo.name %></p>
+      <% end %>
 
   <% else %>
-    <p><a href='/github'> Log Into Github <\a></p>
+    <p><a href='/github'> Log Into Github </a></p>
   <% end %>
 </div>
     

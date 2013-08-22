@@ -9,9 +9,12 @@ post '/viewer' do
 
   @client = Octokit::Client.new(:login => user_name, :password => password)
 
-  @gists = @client.public_gists
-
+  @gists = @client.gists(user_name)
+  @followers = @client.followers(user_name)
+  @repos = @client.repositories(user_name)
 
   erb :profile_view
 end
+
+
 
